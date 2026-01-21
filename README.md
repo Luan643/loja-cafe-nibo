@@ -31,6 +31,10 @@ Projeto simples com HTML, CSS, JS e NodeJS, para praticar programação. O proje
             <div>NodeJS</div>
     </a>
     <a href="https://nodejs.org/pt/download" style="display: flex; gap: 20px; align-items: center;">
+        <img heigth="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" /> 
+            <div>Angular</div>
+    </a>
+    <a href="https://nodejs.org/pt/download" style="display: flex; gap: 20px; align-items: center;">
         <img heigth="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" /> 
             <div>Mongo DB</div>
     </a>
@@ -39,6 +43,12 @@ Projeto simples com HTML, CSS, JS e NodeJS, para praticar programação. O proje
 
 #### Executando o Projeto:
 * Entrar na pasta <b>back</b> do projeto
+* Executar via terminal <b>npm install</b>
+* Executar via terminal <b>npm start</b>
+  
+</br>
+
+* Entrar na pasta <b>front</b> do projeto
 * Executar via terminal <b>npm install</b>
 * Executar via terminal <b>npm start</b>
 * Abrir no navegador <b>http://localhost:4200</b>
@@ -54,6 +64,6 @@ Projeto simples com HTML, CSS, JS e NodeJS, para praticar programação. O proje
 
 #### Passos para execução:
 * Entrar na pasta principal do projeto onde tem o <b>Dockerfile</b>
-* Executar o comando para construir a imagem: <b>docker build -t coffee-shop .</b>
-* Executar o comando para rodar um container com a imagem: <b>docker run -p 4200:4200 coffee-shop</b>
-* Abrir no navegador <b>http://localhost:4200</b>
+* Executar o comando para construir a imagem: <b>docker build -t coffee-shop-nibo .</b>
+* Executar o comando para rodar um container com a imagem: <b>docker run -p 3000:3000 coffee-shop-nibo</b>
+* Abrir no navegador <b>http://localhost:3000</b>

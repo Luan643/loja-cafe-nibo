@@ -5,7 +5,7 @@ import { HistoricoCarrinhoRotas } from "./src/rotas/hitorico_rotas.js";
 import { UsuarioRotas } from "./src/rotas/usuario_rotas.js";
 import { ProdutoRotas } from "./src/rotas/produto_rotas.js";
 import { CarrinhoRotas } from "./src/rotas/carrinho_rotas.js";
-import path from 'path'
+import path, { join } from 'path'
 import { fileURLToPath } from 'url';
 import { criarDados } from "./src/connect/criarDadosIniciais.js";
 
@@ -22,16 +22,18 @@ async function start() {
     await connectDB()
     await criarDados()
 
-    app.use(express.static(path.join(__dirname, '../front')))
-
-    app.get('/', (req, res) => {
-        res.redirect('/paginas/index.html')
-    })
+    const frontend = path.join(__dirname, 'public/loja-cafe-nibo/browser')
+    app.use(express.static(frontend))
+    
 
     app.use('/usuario', UsuarioRotas)
     app.use('/produto', ProdutoRotas)
     app.use('/carrinho', CarrinhoRotas)
     app.use('/historico', HistoricoCarrinhoRotas)
+
+    app.get(/^(?!\/api).+/, (req, res) => {
+        res.sendFile(path.join(frontend, 'index.html'))
+    })
 
     app.listen(3000, function () {
         console.log('o servidor esta rodando na porta 3000')
