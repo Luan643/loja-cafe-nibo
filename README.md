@@ -4,7 +4,7 @@
 <img heigth="200px" width="200px" src="./latte-art.png" /> 
 
 ## Descrição
-Projeto simples com HTML, CSS, JS e NodeJS, para praticar programação. O projeto contém um servidor com NodeJS com Express e MongoDB. Frontend feito em HTML, CSS e JS.
+Projeto simples com Angular e NodeJS, feito para a entrevista da Nibo. O projeto contém um servidor com NodeJS, Express e MongoDB. Frontend feito Angular v21
 
 ## Funcionalidades:
 
@@ -14,7 +14,7 @@ Projeto simples com HTML, CSS, JS e NodeJS, para praticar programação. O proje
 * Hitórico de compras
 * Cadastro de usuário
 * Login
-* Áreas restrita com acesso apenas a pessoa logadas
+* Áreas restrita com acesso apenas a pessoa logadas e também áreas retritas a administradores
 
 </br>
 </br>
