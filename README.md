@@ -55,5 +55,5 @@ Projeto simples com HTML, CSS, JS e NodeJS, para praticar programação. O proje
 #### Passos para execução:
 * Entrar na pasta principal do projeto onde tem o <b>Dockerfile</b>
 * Executar o comando para construir a imagem: <b>docker build -t coffee-shop .</b>
-* Executar o comando para rodar um container com a imagem: <b>docker run -p 3000:3000 coffee-shop</b>
+* Executar o comando para rodar um container com a imagem: <b>docker run -p 4200:4200 coffee-shop</b>
 * Abrir no navegador <b>http://localhost:4200</b>
