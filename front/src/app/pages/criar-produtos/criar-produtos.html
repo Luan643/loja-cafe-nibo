@@ -1,0 +1,15 @@
+<body>
+    <div class="container">
+        <div id="criarProduto">
+            <div class="imagem" (click)="escolherImagem()">
+                <div class="imagem-pelicula">
+                    <img src="https://res.cloudinary.com/dlaew2qjk/image/upload/v1648482152/assets/producto_vacio.png">
+                </div>
+                <img [src]="imagem()? imagem(): '/assets/imagem_vazia.png'" >
+            </div>
+            <input type="text" id="nomeProduto" placeholder="Nome do Produto" [(ngModel)]="produto.nome">
+            <input type="number" id="precoProduto" placeholder="Preço (R$)" [(ngModel)]="produto.preco">
+            <button class="btn-confirmar" (click)="criarNovoProduto()">Criar Produto</button>
+        </div>
+    </div>
+</body>

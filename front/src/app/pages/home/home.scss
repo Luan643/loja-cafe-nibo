@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.lista-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 20px;
+    list-style: none;
+    margin-top: 100px;
+    width: 60%;
+
+}
+
+.produto-card {
+    box-sizing: border-box;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    flex-basis: calc(25% - 20px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.produto-card p {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.imagem-produto {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: rgb(221, 221, 221);
+}
+
+.imagem-produto img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.botao-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.botao-container > button {
+    flex-basis: 40% !important;
+}

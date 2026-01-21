@@ -1,0 +1,26 @@
+<div id="container">
+    <div id="carrinhoContainer">
+        <div id="carrinho">
+            @for( produto of produtosCarrinho(); track produto._id ) {
+            <div class="item-carrinho">
+                <p><strong>{{produto.nome}}</strong></p>
+                <p>Qtd: {{produto.quantidade}}</p>
+                <p>{{converterMoeda(produto.preco)}}</p>
+                <button class="btn-remover" (click)="removerItemCarrinho(produto._id)">Remover</button>
+            </div>
+            } @empty {
+            <p>Seu carrinho está vazio</p>
+            }
+
+            @if (produtosCarrinho().length) {
+            <div class="valor-total">
+                <p>Total: {{converterMoeda(valorTotal())}}</p>
+            </div>
+            }
+        </div>
+        @if (produtosCarrinho().length) {
+        <button class="btn-confirmar" id="btn-finalizar-compra" (click)="finalizarCompraNoCarrinho()">Finalizar
+            Compra</button>
+        }
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div id="toast">
+    @for (mensagem of mensagens(); track mensagem.id) {
+        <div [class]="'toast-mensagem ' + (mensagem.erro? 'erro': 'sucesso')">
+            <span (click)="fecharToast(mensagem.id!!)">X</span>
+            <p>{{mensagem.mensagem}}</p>
+        </div>
+    }
+</div>

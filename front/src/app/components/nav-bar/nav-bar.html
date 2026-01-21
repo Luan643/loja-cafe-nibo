@@ -1,0 +1,22 @@
+<div class="navBar" id="navBar">
+    <h1 class="logo" (click)="navagacao('/home')">Coffee Shop Nibo</h1>
+    <div class="divPesquisar">
+        <input placeholder="Pesquisar produto" class="inputPesquisar" type="text" id="inputPesquisar"
+            (input)="buscaProduto($event.target.value)">
+    </div>
+    <nav>
+        @if(usuario()) {
+                @if(usuario()?.eAdmin) {
+                    <p class="navHover" (click)="navagacao('/criar_produtos')">Criar Produto</p>
+                }
+                <p class="navHover" (click)="navagacao('/carrinho')">Carrinho</p>
+                <p class="navHover" (click)="navagacao('/historico')">Histórico</p>
+            }
+        <div id="login">
+            <div>{{usuario()?.nome}}</div>
+            <button class="nav-btn" (click)="loginLogout()">
+                {{ usuario()? 'Sair': 'Login' }}
+            </button>
+        </div>
+    </nav>
+</div>

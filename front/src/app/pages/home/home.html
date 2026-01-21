@@ -1,0 +1,22 @@
+<body>
+    <div class="container">
+        <div class="lista-produtos" id="lista-produtos">
+
+            @for( produto of listaDeProdutos(); track produto._id){
+            <li class="produto-card">
+                <h3>{{produto.nome}}</h3>
+                <div class="imagem-produto">
+                    <img [src]="produto.img? produto.img: '/assets/imagem_vazia.png'" />
+                </div>
+                <p>R$ {{produto.preco.toFixed(2)}}</p>
+                <div class="botao-container">
+                    <button (click)="adicionarAoCarrinho(produto._id)">Comprar</button>
+                </div>
+            </li>
+            } @empty {
+            <p>Carregando produtos...</p>
+            }
+
+        </div>
+    </div>
+</body>

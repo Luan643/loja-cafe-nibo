@@ -1,0 +1,19 @@
+<div class="form">
+    <div class="form-container">
+        <h1>Login {{nomeAplicacao}}</h1>
+        @if (cadastro()) {
+            <input type="text" placeholder="Nome Usuário" [(ngModel)]="usuario.nome">
+        }
+        <input type="text" placeholder="Usuário" [(ngModel)]="usuario.usuario">
+        <input type="password" placeholder="Senha" [(ngModel)]="usuario.senha">
+        <button (click)="login()">Entrar</button>
+
+        <div class="footer-form">
+            @if (!cadastro()) {
+                <p>Ainda não tem conta?</p>
+            }
+            <button class="btn-link" (click)="criarContat(!cadastro())">{{cadastro()? 'Login': 'Criar Conta'}}</button>
+            <button class="btn-link" (click)="irParaHome()">Produtos</button>
+        </div>
+    </div>
+</div>
