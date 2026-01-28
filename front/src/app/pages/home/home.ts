@@ -18,7 +18,7 @@ export class Home implements OnInit {
   carrinhoServico = inject(CarrinhoServico)
   util = inject(Util)
 
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.produtoServico.listarProdutos().subscribe(produtos => {
@@ -28,7 +28,7 @@ export class Home implements OnInit {
     const body = document.querySelector('body')
     body?.addEventListener('busca-produto', (evt: any) => {
       this.produtoServico.buscarProdutos(evt.detail)
-      .subscribe(produtos => this.listaDeProdutos.set(produtos))
+        .subscribe(produtos => this.listaDeProdutos.set(produtos))
     })
   }
 
@@ -36,14 +36,14 @@ export class Home implements OnInit {
 
     const usuarioLocalStorage: any = localStorage.getItem("usuarioDados")
 
-    if(!usuarioLocalStorage){
+    if (!usuarioLocalStorage) {
       this.util.criarToast('Para adicionar produtos ao carrinho é necessário estar logado', true)
       return
     }
 
     const usuarioParseJson = JSON.parse(usuarioLocalStorage)
 
-    const dadosCompra:any = {
+    const dadosCompra: any = {
       usuarioId: usuarioParseJson._id,
       produtoId,
       quantidade: 1
@@ -59,3 +59,14 @@ export class Home implements OnInit {
     this.router.navigate([`detalhar/${produtoId}`])
   }
 }
+
+// detalhar(produtoId?: string) {
+//     if (produtoId) {
+//       this.produtoServico.buscarProdutoPorId(produtoId).subscribe(produto => {
+//         if (produto) {
+//           console.log(produto)
+//           this.router.navigate([`detalhar/${produtoId}`])
+//         }
+//       })
+//     }
+//   }

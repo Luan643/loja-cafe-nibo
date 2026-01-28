@@ -15,6 +15,10 @@ export class ProdutoRepositorio {
         return await ProdutoModel.find({})
     }
 
+    async pesquisarProdutoPeloId(idProduto) {
+        return await ProdutoModel.findById(idProduto)
+    }
+
     async pesquisarProduto(nomeProduto) {
         return await ProdutoModel.find({
             nome: {

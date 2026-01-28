@@ -21,9 +21,6 @@ export class Util {
     if (!usuarioDadosJSON) {
       alert('Antes de acessar essa funcionalidade, faça o login')
       return
-
-      // await notificar('Antes de acessar essa funcionalidade, faça o login')
-      //irPara('login.html')
     }
     const usuarioDadosJS: UsuarioLogado = JSON.parse(usuarioDadosJSON)
     return usuarioDadosJS._id

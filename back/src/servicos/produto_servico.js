@@ -29,4 +29,8 @@ export class ProdutoServico {
     async pesquisarProduto(nomeProduto) {
         return await produtoRepositorio.pesquisarProduto(nomeProduto) 
     }
+
+    async pesquisarProdutoPeloId(idProduto){
+        return await produtoRepositorio.pesquisarProdutoPeloId(idProduto)
+    }
 }
