@@ -1,4 +1,6 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, inject, Input, input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProdutoServico } from '../../services/produto-servico';
 
 @Component({
   selector: 'app-detalhar-produto',
@@ -8,6 +10,18 @@ import { Component, Input, input } from '@angular/core';
 })
 export class DetalharProduto {
 
-  @Input()
-  id!: string
+  route = inject(ActivatedRoute)
+  produtoServico = inject(ProdutoServico)
+
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id')
+
+    if (id)
+      this.produtoServico.buscarProdutoPorId(id).subscribe(produto => {
+        console.log(produto)
+      })
+  }
+
+  // @Input()
+  // id!: string
 }

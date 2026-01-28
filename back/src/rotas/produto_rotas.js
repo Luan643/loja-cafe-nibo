@@ -22,6 +22,15 @@ rotas.get("/", async function (req, res) {
     }
 })
 
+rotas.get("/:id", async function (req, res) {
+    try {
+        const produtoPesquisado = await produtoServico.pesquisarProdutoPeloId(req.params.id)
+        res.status(200).send(produtoPesquisado)
+    } catch (erro) {
+        res.status(erro.codigoHTTP).send(erro.mensagem)
+    }
+})
+
 rotas.get("/busca", async function (req, res) {
     try {
         const produtoPesquisado = await produtoServico.pesquisarProduto(req.query.nome)

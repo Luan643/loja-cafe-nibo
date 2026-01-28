@@ -27,5 +27,9 @@ export class ProdutoServico {
   buscarProdutos(nome: string) {
     return this.httpClient.get<Produto[]>(`${BASE_URL}/produto/busca?nome=${nome}`)
   }
+
+  buscarProdutoPorId(idProduto: string){
+    return this.httpClient.get<Produto>(`${BASE_URL}/produto/${idProduto}`)
+  }
 }
 

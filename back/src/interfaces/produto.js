@@ -11,7 +11,7 @@ const produtoSchema = new Schema({
     },
     img: {
         type: String,
-        require: true
+        required: true
     }
 })
 

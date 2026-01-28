@@ -11,6 +11,7 @@
                 <p>R$ {{produto.preco.toFixed(2)}}</p>
                 <div class="botao-container">
                     <button (click)="adicionarAoCarrinho(produto._id)">Comprar</button>
+                    <button (click)="detalhar(produto._id)">Detalhar</button>
                 </div>
             </li>
             } @empty {
