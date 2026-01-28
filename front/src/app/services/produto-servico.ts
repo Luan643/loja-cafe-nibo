@@ -29,7 +29,7 @@ export class ProdutoServico {
   }
 
   buscarProdutoPorId(idProduto: string){
-    return this.httpClient.get<Produto>(`${BASE_URL}/produto/${idProduto}`)
+    return this.httpClient.get<Produto>(`${BASE_URL}/produto/detalhar/${idProduto}`)
   }
 }
 

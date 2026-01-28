@@ -12,14 +12,17 @@ export class DetalharProduto {
 
   route = inject(ActivatedRoute)
   produtoServico = inject(ProdutoServico)
+  teste:any
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')
-
-    if (id)
+    this.teste = id
+    if (id) {
       this.produtoServico.buscarProdutoPorId(id).subscribe(produto => {
         console.log(produto)
       })
+    }
+
   }
 
   // @Input()
